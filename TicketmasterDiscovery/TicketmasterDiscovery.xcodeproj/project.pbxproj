@@ -118,12 +118,7 @@
 				C2358C2D2B89D83E00DC8F31 /* ViewModels */,
 				C2358C2C2B89D81C00DC8F31 /* Services */,
 				C2358C2B2B89D81100DC8F31 /* Errors */,
-				C2358BFE2B89619B00DC8F31 /* TicketmasterDiscoveryApp.swift */,
-				C2358C002B89619B00DC8F31 /* ContentView.swift */,
-				C2358C022B89619B00DC8F31 /* Item.swift */,
-				C2358C042B89619D00DC8F31 /* Assets.xcassets */,
-				C2358C062B89619D00DC8F31 /* TicketmasterDiscovery.entitlements */,
-				C2358C072B89619D00DC8F31 /* Preview Content */,
+				C2358C452B8A2A1800DC8F31 /* Misc */,
 			);
 			path = TicketmasterDiscovery;
 			sourceTree = "<group>";
@@ -234,6 +229,19 @@
 				C2358C432B8A023700DC8F31 /* EventCardView.swift */,
 			);
 			path = EventCardView;
+			sourceTree = "<group>";
+		};
+		C2358C452B8A2A1800DC8F31 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				C2358BFE2B89619B00DC8F31 /* TicketmasterDiscoveryApp.swift */,
+				C2358C002B89619B00DC8F31 /* ContentView.swift */,
+				C2358C022B89619B00DC8F31 /* Item.swift */,
+				C2358C042B89619D00DC8F31 /* Assets.xcassets */,
+				C2358C062B89619D00DC8F31 /* TicketmasterDiscovery.entitlements */,
+				C2358C072B89619D00DC8F31 /* Preview Content */,
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,7 +473,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -520,7 +530,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -532,10 +544,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = TicketmasterDiscovery/TicketmasterDiscovery.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TicketmasterDiscovery/Misc/TicketmasterDiscovery.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TicketmasterDiscovery/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TicketmasterDiscovery/Misc/Preview Content\"";
 				DEVELOPMENT_TEAM = 3LNUZ8SFQF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -571,10 +583,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = TicketmasterDiscovery/TicketmasterDiscovery.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TicketmasterDiscovery/Misc/TicketmasterDiscovery.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TicketmasterDiscovery/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TicketmasterDiscovery/Misc/Preview Content\"";
 				DEVELOPMENT_TEAM = 3LNUZ8SFQF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
