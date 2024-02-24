@@ -1,0 +1,740 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C2358BFF2B89619B00DC8F31 /* TicketmasterDiscoveryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358BFE2B89619B00DC8F31 /* TicketmasterDiscoveryApp.swift */; };
+		C2358C012B89619B00DC8F31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C002B89619B00DC8F31 /* ContentView.swift */; };
+		C2358C032B89619B00DC8F31 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C022B89619B00DC8F31 /* Item.swift */; };
+		C2358C052B89619D00DC8F31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2358C042B89619D00DC8F31 /* Assets.xcassets */; };
+		C2358C092B89619D00DC8F31 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2358C082B89619D00DC8F31 /* Preview Assets.xcassets */; };
+		C2358C132B89619D00DC8F31 /* TicketmasterDiscoveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C122B89619D00DC8F31 /* TicketmasterDiscoveryTests.swift */; };
+		C2358C1D2B89619D00DC8F31 /* TicketmasterDiscoveryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C1C2B89619D00DC8F31 /* TicketmasterDiscoveryUITests.swift */; };
+		C2358C1F2B89619D00DC8F31 /* TicketmasterDiscoveryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C1E2B89619D00DC8F31 /* TicketmasterDiscoveryUITestsLaunchTests.swift */; };
+		C2358C332B89D94500DC8F31 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C322B89D94500DC8F31 /* NetworkError.swift */; };
+		C2358C352B89D96700DC8F31 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C342B89D96700DC8F31 /* NetworkService.swift */; };
+		C2358C372B89D9B400DC8F31 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C362B89D9B400DC8F31 /* LaunchScreenView.swift */; };
+		C2358C392B89D9CE00DC8F31 /* EventsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C382B89D9CE00DC8F31 /* EventsListView.swift */; };
+		C2358C3B2B89D9F500DC8F31 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C3A2B89D9F500DC8F31 /* NetworkResponse.swift */; };
+		C2358C3E2B89DA6500DC8F31 /* LaunchScreenStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C3D2B89DA6500DC8F31 /* LaunchScreenStateManager.swift */; };
+		C2358C412B89FC8200DC8F31 /* EventsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C402B89FC8200DC8F31 /* EventsListViewModel.swift */; };
+		C2358C442B8A023700DC8F31 /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C432B8A023700DC8F31 /* EventCardView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C2358C0F2B89619D00DC8F31 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C2358BF32B89619B00DC8F31 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2358BFA2B89619B00DC8F31;
+			remoteInfo = TicketmasterDiscovery;
+		};
+		C2358C192B89619D00DC8F31 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C2358BF32B89619B00DC8F31 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2358BFA2B89619B00DC8F31;
+			remoteInfo = TicketmasterDiscovery;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C2358BFB2B89619B00DC8F31 /* TicketmasterDiscovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicketmasterDiscovery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2358BFE2B89619B00DC8F31 /* TicketmasterDiscoveryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketmasterDiscoveryApp.swift; sourceTree = "<group>"; };
+		C2358C002B89619B00DC8F31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C2358C022B89619B00DC8F31 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		C2358C042B89619D00DC8F31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C2358C062B89619D00DC8F31 /* TicketmasterDiscovery.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TicketmasterDiscovery.entitlements; sourceTree = "<group>"; };
+		C2358C082B89619D00DC8F31 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C2358C0E2B89619D00DC8F31 /* TicketmasterDiscoveryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicketmasterDiscoveryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2358C122B89619D00DC8F31 /* TicketmasterDiscoveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketmasterDiscoveryTests.swift; sourceTree = "<group>"; };
+		C2358C182B89619D00DC8F31 /* TicketmasterDiscoveryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicketmasterDiscoveryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2358C1C2B89619D00DC8F31 /* TicketmasterDiscoveryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketmasterDiscoveryUITests.swift; sourceTree = "<group>"; };
+		C2358C1E2B89619D00DC8F31 /* TicketmasterDiscoveryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketmasterDiscoveryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C2358C322B89D94500DC8F31 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		C2358C342B89D96700DC8F31 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		C2358C362B89D9B400DC8F31 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		C2358C382B89D9CE00DC8F31 /* EventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListView.swift; sourceTree = "<group>"; };
+		C2358C3A2B89D9F500DC8F31 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		C2358C3D2B89DA6500DC8F31 /* LaunchScreenStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenStateManager.swift; sourceTree = "<group>"; };
+		C2358C402B89FC8200DC8F31 /* EventsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListViewModel.swift; sourceTree = "<group>"; };
+		C2358C432B8A023700DC8F31 /* EventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C2358BF82B89619B00DC8F31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2358C0B2B89619D00DC8F31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2358C152B89619D00DC8F31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C2358BF22B89619B00DC8F31 = {
+			isa = PBXGroup;
+			children = (
+				C2358BFD2B89619B00DC8F31 /* TicketmasterDiscovery */,
+				C2358C112B89619D00DC8F31 /* TicketmasterDiscoveryTests */,
+				C2358C1B2B89619D00DC8F31 /* TicketmasterDiscoveryUITests */,
+				C2358BFC2B89619B00DC8F31 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C2358BFC2B89619B00DC8F31 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C2358BFB2B89619B00DC8F31 /* TicketmasterDiscovery.app */,
+				C2358C0E2B89619D00DC8F31 /* TicketmasterDiscoveryTests.xctest */,
+				C2358C182B89619D00DC8F31 /* TicketmasterDiscoveryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C2358BFD2B89619B00DC8F31 /* TicketmasterDiscovery */ = {
+			isa = PBXGroup;
+			children = (
+				C2358C2F2B89D85C00DC8F31 /* Models */,
+				C2358C2E2B89D85300DC8F31 /* Views */,
+				C2358C2D2B89D83E00DC8F31 /* ViewModels */,
+				C2358C2C2B89D81C00DC8F31 /* Services */,
+				C2358C2B2B89D81100DC8F31 /* Errors */,
+				C2358BFE2B89619B00DC8F31 /* TicketmasterDiscoveryApp.swift */,
+				C2358C002B89619B00DC8F31 /* ContentView.swift */,
+				C2358C022B89619B00DC8F31 /* Item.swift */,
+				C2358C042B89619D00DC8F31 /* Assets.xcassets */,
+				C2358C062B89619D00DC8F31 /* TicketmasterDiscovery.entitlements */,
+				C2358C072B89619D00DC8F31 /* Preview Content */,
+			);
+			path = TicketmasterDiscovery;
+			sourceTree = "<group>";
+		};
+		C2358C072B89619D00DC8F31 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C2358C082B89619D00DC8F31 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C2358C112B89619D00DC8F31 /* TicketmasterDiscoveryTests */ = {
+			isa = PBXGroup;
+			children = (
+				C2358C122B89619D00DC8F31 /* TicketmasterDiscoveryTests.swift */,
+			);
+			path = TicketmasterDiscoveryTests;
+			sourceTree = "<group>";
+		};
+		C2358C1B2B89619D00DC8F31 /* TicketmasterDiscoveryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C2358C1C2B89619D00DC8F31 /* TicketmasterDiscoveryUITests.swift */,
+				C2358C1E2B89619D00DC8F31 /* TicketmasterDiscoveryUITestsLaunchTests.swift */,
+			);
+			path = TicketmasterDiscoveryUITests;
+			sourceTree = "<group>";
+		};
+		C2358C2B2B89D81100DC8F31 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				C2358C322B89D94500DC8F31 /* NetworkError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		C2358C2C2B89D81C00DC8F31 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C2358C342B89D96700DC8F31 /* NetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C2358C2D2B89D83E00DC8F31 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C2358C3F2B89DD0A00DC8F31 /* EventsList */,
+				C2358C3C2B89DA1900DC8F31 /* LaunchScreen */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C2358C2E2B89D85300DC8F31 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C2358C422B8A022800DC8F31 /* EventCardView */,
+				C2358C312B89D8AE00DC8F31 /* EventsListView */,
+				C2358C302B89D87100DC8F31 /* LaunchScreenView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C2358C2F2B89D85C00DC8F31 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C2358C3A2B89D9F500DC8F31 /* NetworkResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C2358C302B89D87100DC8F31 /* LaunchScreenView */ = {
+			isa = PBXGroup;
+			children = (
+				C2358C362B89D9B400DC8F31 /* LaunchScreenView.swift */,
+			);
+			path = LaunchScreenView;
+			sourceTree = "<group>";
+		};
+		C2358C312B89D8AE00DC8F31 /* EventsListView */ = {
+			isa = PBXGroup;
+			children = (
+				C2358C382B89D9CE00DC8F31 /* EventsListView.swift */,
+			);
+			path = EventsListView;
+			sourceTree = "<group>";
+		};
+		C2358C3C2B89DA1900DC8F31 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C2358C3D2B89DA6500DC8F31 /* LaunchScreenStateManager.swift */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		C2358C3F2B89DD0A00DC8F31 /* EventsList */ = {
+			isa = PBXGroup;
+			children = (
+				C2358C402B89FC8200DC8F31 /* EventsListViewModel.swift */,
+			);
+			path = EventsList;
+			sourceTree = "<group>";
+		};
+		C2358C422B8A022800DC8F31 /* EventCardView */ = {
+			isa = PBXGroup;
+			children = (
+				C2358C432B8A023700DC8F31 /* EventCardView.swift */,
+			);
+			path = EventCardView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C2358BFA2B89619B00DC8F31 /* TicketmasterDiscovery */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2358C222B89619D00DC8F31 /* Build configuration list for PBXNativeTarget "TicketmasterDiscovery" */;
+			buildPhases = (
+				C2358BF72B89619B00DC8F31 /* Sources */,
+				C2358BF82B89619B00DC8F31 /* Frameworks */,
+				C2358BF92B89619B00DC8F31 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TicketmasterDiscovery;
+			productName = TicketmasterDiscovery;
+			productReference = C2358BFB2B89619B00DC8F31 /* TicketmasterDiscovery.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C2358C0D2B89619D00DC8F31 /* TicketmasterDiscoveryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2358C252B89619D00DC8F31 /* Build configuration list for PBXNativeTarget "TicketmasterDiscoveryTests" */;
+			buildPhases = (
+				C2358C0A2B89619D00DC8F31 /* Sources */,
+				C2358C0B2B89619D00DC8F31 /* Frameworks */,
+				C2358C0C2B89619D00DC8F31 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C2358C102B89619D00DC8F31 /* PBXTargetDependency */,
+			);
+			name = TicketmasterDiscoveryTests;
+			productName = TicketmasterDiscoveryTests;
+			productReference = C2358C0E2B89619D00DC8F31 /* TicketmasterDiscoveryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C2358C172B89619D00DC8F31 /* TicketmasterDiscoveryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2358C282B89619D00DC8F31 /* Build configuration list for PBXNativeTarget "TicketmasterDiscoveryUITests" */;
+			buildPhases = (
+				C2358C142B89619D00DC8F31 /* Sources */,
+				C2358C152B89619D00DC8F31 /* Frameworks */,
+				C2358C162B89619D00DC8F31 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C2358C1A2B89619D00DC8F31 /* PBXTargetDependency */,
+			);
+			name = TicketmasterDiscoveryUITests;
+			productName = TicketmasterDiscoveryUITests;
+			productReference = C2358C182B89619D00DC8F31 /* TicketmasterDiscoveryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C2358BF32B89619B00DC8F31 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					C2358BFA2B89619B00DC8F31 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					C2358C0D2B89619D00DC8F31 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = C2358BFA2B89619B00DC8F31;
+					};
+					C2358C172B89619D00DC8F31 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = C2358BFA2B89619B00DC8F31;
+					};
+				};
+			};
+			buildConfigurationList = C2358BF62B89619B00DC8F31 /* Build configuration list for PBXProject "TicketmasterDiscovery" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C2358BF22B89619B00DC8F31;
+			productRefGroup = C2358BFC2B89619B00DC8F31 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C2358BFA2B89619B00DC8F31 /* TicketmasterDiscovery */,
+				C2358C0D2B89619D00DC8F31 /* TicketmasterDiscoveryTests */,
+				C2358C172B89619D00DC8F31 /* TicketmasterDiscoveryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C2358BF92B89619B00DC8F31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2358C092B89619D00DC8F31 /* Preview Assets.xcassets in Resources */,
+				C2358C052B89619D00DC8F31 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2358C0C2B89619D00DC8F31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2358C162B89619D00DC8F31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C2358BF72B89619B00DC8F31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2358C012B89619B00DC8F31 /* ContentView.swift in Sources */,
+				C2358C3B2B89D9F500DC8F31 /* NetworkResponse.swift in Sources */,
+				C2358C372B89D9B400DC8F31 /* LaunchScreenView.swift in Sources */,
+				C2358C332B89D94500DC8F31 /* NetworkError.swift in Sources */,
+				C2358C032B89619B00DC8F31 /* Item.swift in Sources */,
+				C2358C3E2B89DA6500DC8F31 /* LaunchScreenStateManager.swift in Sources */,
+				C2358C442B8A023700DC8F31 /* EventCardView.swift in Sources */,
+				C2358BFF2B89619B00DC8F31 /* TicketmasterDiscoveryApp.swift in Sources */,
+				C2358C352B89D96700DC8F31 /* NetworkService.swift in Sources */,
+				C2358C392B89D9CE00DC8F31 /* EventsListView.swift in Sources */,
+				C2358C412B89FC8200DC8F31 /* EventsListViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2358C0A2B89619D00DC8F31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2358C132B89619D00DC8F31 /* TicketmasterDiscoveryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2358C142B89619D00DC8F31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2358C1D2B89619D00DC8F31 /* TicketmasterDiscoveryUITests.swift in Sources */,
+				C2358C1F2B89619D00DC8F31 /* TicketmasterDiscoveryUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C2358C102B89619D00DC8F31 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C2358BFA2B89619B00DC8F31 /* TicketmasterDiscovery */;
+			targetProxy = C2358C0F2B89619D00DC8F31 /* PBXContainerItemProxy */;
+		};
+		C2358C1A2B89619D00DC8F31 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C2358BFA2B89619B00DC8F31 /* TicketmasterDiscovery */;
+			targetProxy = C2358C192B89619D00DC8F31 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C2358C202B89619D00DC8F31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C2358C212B89619D00DC8F31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		C2358C232B89619D00DC8F31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TicketmasterDiscovery/TicketmasterDiscovery.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TicketmasterDiscovery/Preview Content\"";
+				DEVELOPMENT_TEAM = 3LNUZ8SFQF;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Ticketmaster;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = caioBerkley.TicketmasterDiscovery;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C2358C242B89619D00DC8F31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TicketmasterDiscovery/TicketmasterDiscovery.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TicketmasterDiscovery/Preview Content\"";
+				DEVELOPMENT_TEAM = 3LNUZ8SFQF;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Ticketmaster;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = caioBerkley.TicketmasterDiscovery;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C2358C262B89619D00DC8F31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3LNUZ8SFQF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = caioBerkley.TicketmasterDiscoveryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TicketmasterDiscovery.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TicketmasterDiscovery";
+			};
+			name = Debug;
+		};
+		C2358C272B89619D00DC8F31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3LNUZ8SFQF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = caioBerkley.TicketmasterDiscoveryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TicketmasterDiscovery.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TicketmasterDiscovery";
+			};
+			name = Release;
+		};
+		C2358C292B89619D00DC8F31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3LNUZ8SFQF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = caioBerkley.TicketmasterDiscoveryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TicketmasterDiscovery;
+			};
+			name = Debug;
+		};
+		C2358C2A2B89619D00DC8F31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3LNUZ8SFQF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = caioBerkley.TicketmasterDiscoveryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TicketmasterDiscovery;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C2358BF62B89619B00DC8F31 /* Build configuration list for PBXProject "TicketmasterDiscovery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2358C202B89619D00DC8F31 /* Debug */,
+				C2358C212B89619D00DC8F31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2358C222B89619D00DC8F31 /* Build configuration list for PBXNativeTarget "TicketmasterDiscovery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2358C232B89619D00DC8F31 /* Debug */,
+				C2358C242B89619D00DC8F31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2358C252B89619D00DC8F31 /* Build configuration list for PBXNativeTarget "TicketmasterDiscoveryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2358C262B89619D00DC8F31 /* Debug */,
+				C2358C272B89619D00DC8F31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2358C282B89619D00DC8F31 /* Build configuration list for PBXNativeTarget "TicketmasterDiscoveryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2358C292B89619D00DC8F31 /* Debug */,
+				C2358C2A2B89619D00DC8F31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C2358BF32B89619B00DC8F31 /* Project object */;
+}
