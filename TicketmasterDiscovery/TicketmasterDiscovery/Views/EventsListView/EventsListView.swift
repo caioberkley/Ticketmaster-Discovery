@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import WebKit
 
 struct EventsListView: View {
     @EnvironmentObject private var launchScreenState: LaunchScreenStateManager
@@ -16,16 +15,18 @@ struct EventsListView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.blue.ignoresSafeArea()
+                Color.white.ignoresSafeArea()
                 List(viewModel.events, id: \.id) { event in
                     NavigationLink(
                         destination: WebView(url: (URL(string: event.url) ?? URL(string: "https://www.ticketmaster.com"))!)
                     ) {
-                        EventCardView(event: event)
+                        if let eventViewModel = viewModel.eventViewModel(for: event) {
+                            EventCardView(viewModel: eventViewModel)
+                        }
                     }
                     .listRowSeparator(.hidden)
-                    .listRowInsets(EdgeInsets(top: 0, leading: 24, bottom: 24, trailing: 6))
-                    .listRowBackground(Color.black.ignoresSafeArea())
+                    .listRowInsets(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 6))
+                    .listRowBackground(Color.clear.ignoresSafeArea())
                     .onAppear {
                         viewModel.loadNextPageIfNeeded(event: event)
                     }
@@ -43,12 +44,14 @@ struct EventsListView: View {
                 }
                 .listStyle(.plain)
                 .background(Color.white.ignoresSafeArea())
-                
                 if isLoading {
                     ProgressView()
                 }
             }
-            .navigationBarTitle("Events", displayMode: .large)
+            .navigationBarTitle("Ticketmaster")
+                .onAppear {
+                    UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.tintColor]
+                }
         }
         .task {
             isLoading = true
@@ -72,18 +75,11 @@ struct EventsListView: View {
     }
 }
 
-struct WebView: UIViewRepresentable {
-    let url: URL
-
-    func makeUIView(context: Context) -> WKWebView  {
-        let webView = WKWebView()
-        webView.load(URLRequest(url: url))
-        return webView
-    }
-
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-        if uiView.url == nil {
-            uiView.load(URLRequest(url: url))
-        }
+struct EventsListView_Previews: PreviewProvider {
+    static var previews: some View {
+        let viewModel = EventsListViewModel()
+        return EventsListView()
+            .environmentObject(LaunchScreenStateManager())
+            .environmentObject(viewModel)
     }
 }

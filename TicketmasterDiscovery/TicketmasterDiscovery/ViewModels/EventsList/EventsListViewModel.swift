@@ -5,8 +5,9 @@
 //  Created by Caio Berkley on 24/02/24.
 //
 
-import Foundation
+import SwiftUI
 import Combine
+import WebKit
 
 class EventsListViewModel: ObservableObject {
     @Published var events: [EventModel] = []
@@ -20,6 +21,11 @@ class EventsListViewModel: ObservableObject {
     private let service = NetworkService()
     
     let pageSize = 20
+    
+    func eventViewModel(for event: EventModel) -> EventViewModel? {
+        guard event.embedded.venues.first != nil else { return nil }
+        return EventViewModel(event: event)
+    }
     
     func loadNextPageIfNeeded(event: EventModel) {
         if let lastEvent = events.last, event.id == lastEvent.id {
@@ -45,8 +51,8 @@ class EventsListViewModel: ObservableObject {
                     print("Error loading events: \(error)")
                     self?.isFetchingNextPage = false
                 }
-            } receiveValue: { [weak self] networkResponses in
-                let newEvents = networkResponses.flatMap { $0.events }
+            } receiveValue: { [weak self] networkEmbedded in
+                let newEvents = networkEmbedded.embedded.events
                 DispatchQueue.main.async {
                     self?.events.append(contentsOf: newEvents)
                 }
@@ -75,5 +81,21 @@ class EventsListViewModel: ObservableObject {
     
     func fetchData() async {
         loadNextPage()
+    }
+}
+
+struct WebView: UIViewRepresentable {
+    let url: URL
+
+    func makeUIView(context: Context) -> WKWebView  {
+        let webView = WKWebView()
+        webView.load(URLRequest(url: url))
+        return webView
+    }
+
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        if uiView.url == nil {
+            uiView.load(URLRequest(url: url))
+        }
     }
 }

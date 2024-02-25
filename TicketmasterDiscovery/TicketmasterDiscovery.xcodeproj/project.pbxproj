@@ -23,6 +23,7 @@
 		C2358C3E2B89DA6500DC8F31 /* LaunchScreenStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C3D2B89DA6500DC8F31 /* LaunchScreenStateManager.swift */; };
 		C2358C412B89FC8200DC8F31 /* EventsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C402B89FC8200DC8F31 /* EventsListViewModel.swift */; };
 		C2358C442B8A023700DC8F31 /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C432B8A023700DC8F31 /* EventCardView.swift */; };
+		C2CF6C902B8AEF6E0023A684 /* EventCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CF6C8F2B8AEF6E0023A684 /* EventCardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		C2358C3D2B89DA6500DC8F31 /* LaunchScreenStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenStateManager.swift; sourceTree = "<group>"; };
 		C2358C402B89FC8200DC8F31 /* EventsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListViewModel.swift; sourceTree = "<group>"; };
 		C2358C432B8A023700DC8F31 /* EventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
+		C2CF6C8F2B8AEF6E0023A684 /* EventCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 		C2358C2D2B89D83E00DC8F31 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				C2CF6C8E2B8AEF260023A684 /* EventCard */,
 				C2358C3F2B89DD0A00DC8F31 /* EventsList */,
 				C2358C3C2B89DA1900DC8F31 /* LaunchScreen */,
 			);
@@ -242,6 +245,14 @@
 				C2358C072B89619D00DC8F31 /* Preview Content */,
 			);
 			path = Misc;
+			sourceTree = "<group>";
+		};
+		C2CF6C8E2B8AEF260023A684 /* EventCard */ = {
+			isa = PBXGroup;
+			children = (
+				C2CF6C8F2B8AEF6E0023A684 /* EventCardViewModel.swift */,
+			);
+			path = EventCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +388,7 @@
 				C2358C012B89619B00DC8F31 /* ContentView.swift in Sources */,
 				C2358C3B2B89D9F500DC8F31 /* NetworkResponse.swift in Sources */,
 				C2358C372B89D9B400DC8F31 /* LaunchScreenView.swift in Sources */,
+				C2CF6C902B8AEF6E0023A684 /* EventCardViewModel.swift in Sources */,
 				C2358C332B89D94500DC8F31 /* NetworkError.swift in Sources */,
 				C2358C032B89619B00DC8F31 /* Item.swift in Sources */,
 				C2358C3E2B89DA6500DC8F31 /* LaunchScreenStateManager.swift in Sources */,
@@ -559,6 +571,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -598,6 +611,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
