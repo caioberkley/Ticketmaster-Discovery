@@ -10,17 +10,21 @@ import Combine
 import WebKit
 
 class EventsListViewModel: ObservableObject {
-    @Published var events: [EventModel] = []
+    @Published var events: [EventModel] = [] {
+            didSet {
+                DispatchQueue.main.async {
+                    self.objectWillChange.send()
+                }
+            }
+        }
     
     private var keyword: String = ""
-    private var currentPage: Int = 0
+    private var currentPage: Int = -1
     private var reachedLastPage: Bool = false
     private var isFetchingNextPage: Bool = false
     private var cancellables = Set<AnyCancellable>()
     
     private let service = NetworkService()
-    
-    let pageSize = 20
     
     func eventViewModel(for event: EventModel) -> EventViewModel? {
         guard event.embedded.venues.first != nil else { return nil }
@@ -36,10 +40,10 @@ class EventsListViewModel: ObservableObject {
     func loadNextPage() {
         guard !isFetchingNextPage && !reachedLastPage else { return }
         
-        isFetchingNextPage = true
         let nextPage = currentPage + 1
+        isFetchingNextPage = true
         
-        let allEventsPublisher = service.loadEvents(pageNumber: nextPage, pageSize: pageSize, keyword: keyword)
+        let allEventsPublisher = service.loadEvents(pageNumber: nextPage, keyword: keyword)
         
         allEventsPublisher
             .receive(on: DispatchQueue.main)
@@ -53,9 +57,7 @@ class EventsListViewModel: ObservableObject {
                 }
             } receiveValue: { [weak self] networkEmbedded in
                 let newEvents = networkEmbedded.embedded.events
-                DispatchQueue.main.async {
-                    self?.events.append(contentsOf: newEvents)
-                }
+                self?.events.append(contentsOf: newEvents)
                 self?.currentPage = nextPage
                 self?.reachedLastPage = newEvents.isEmpty
             }
@@ -63,11 +65,12 @@ class EventsListViewModel: ObservableObject {
     }
     
     func initialDataLoad() async {
+        currentPage = -1
         await fetchData()
     }
     
     func refreshData() async {
-        currentPage = 0
+        currentPage = -1
         DispatchQueue.main.async {
             self.events = []
         }
@@ -79,7 +82,7 @@ class EventsListViewModel: ObservableObject {
         cancellables.forEach { $0.cancel() }
     }
     
-    func fetchData() async {
+    private func fetchData() async {
         loadNextPage()
     }
 }

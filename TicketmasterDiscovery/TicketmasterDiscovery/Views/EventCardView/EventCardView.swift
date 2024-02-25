@@ -16,24 +16,25 @@ struct EventCardView: View {
                 HStack(spacing: 0) {
                     AsyncImage(url: unwrappedImage) { image in
                         image.resizable()
+                            .scaledToFill()
+                            .frame(width: 100, height: 100)
+                            .cornerRadius(10)
                     } placeholder: {
                         ProgressView()
                     }
                     .frame(width: 100, height: 100)
-                    .cornerRadius(10)
-                    .padding(.trailing, 0)
                     VStack(alignment: .leading) {
                         Text(viewModel.name)
                             .font(.headline)
                             .foregroundColor(.black)
                         Text(viewModel.formattedDate)
-                            .font(.subheadline)
+                            .font(.caption)
                             .foregroundColor(.gray)
                         Text(viewModel.location)
-                            .font(.subheadline)
+                            .font(.caption)
                             .foregroundColor(.gray)
                         Text(viewModel.venue)
-                            .font(.subheadline)
+                            .font(.caption2)
                             .foregroundColor(.gray)
                     }
                     .padding(.leading, 10)

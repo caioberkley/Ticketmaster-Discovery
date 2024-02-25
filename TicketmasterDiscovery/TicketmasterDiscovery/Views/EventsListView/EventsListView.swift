@@ -16,7 +16,8 @@ struct EventsListView: View {
         NavigationStack {
             ZStack {
                 Color.white.ignoresSafeArea()
-                List(viewModel.events, id: \.id) { event in
+                List(viewModel.events.indices, id: \.self) { index in
+                    let event = viewModel.events[index]
                     NavigationLink(
                         destination: WebView(url: (URL(string: event.url) ?? URL(string: "https://www.ticketmaster.com"))!)
                     ) {

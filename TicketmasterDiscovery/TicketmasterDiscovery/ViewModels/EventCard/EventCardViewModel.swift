@@ -17,7 +17,11 @@ class EventViewModel {
     }
 
     var name: String {
-        event.name
+        if event.ageRestrictions?.legalAgeEnforced == true {
+            event.name + " - (+18)"
+        } else {
+            event.name
+        }
     }
 
     var imageURL: URL? {
