@@ -33,8 +33,8 @@ The default quota is 5000 API calls per day and rate limitation of 5 requests pe
 - Text search (Done)
 - SwiftData (In progress)
 - Error Handling (In progress)
-- Unit Tests (In progress)
-- UI Tests (In progress)
+- Unit Tests (Done)
+- UI Tests (Done)
 
 ## Demonstration Video and Screenshots
 
