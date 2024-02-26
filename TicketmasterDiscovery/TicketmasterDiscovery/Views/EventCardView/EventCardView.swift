@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EventCardView: View {
+    @Environment(\.colorScheme) var colorScheme
     let viewModel: EventViewModel
 
     var body: some View {
@@ -26,7 +27,7 @@ struct EventCardView: View {
                     VStack(alignment: .leading) {
                         Text(viewModel.name)
                             .font(.headline)
-                            .foregroundColor(.black)
+                            .foregroundColor((colorScheme == .light ? Color.black : Color.white))
                         Text(viewModel.formattedDate)
                             .font(.caption)
                             .foregroundColor(.gray)
@@ -41,7 +42,7 @@ struct EventCardView: View {
                     Spacer()
                 }
                 .padding(.top, 0)
-                .background(Color.white)
+                .background(colorScheme == .light ? Color.white : Color.black)
                 .cornerRadius(10)
                 .shadow(color: .gray, radius: 5, x: 0, y: 5)
             }
