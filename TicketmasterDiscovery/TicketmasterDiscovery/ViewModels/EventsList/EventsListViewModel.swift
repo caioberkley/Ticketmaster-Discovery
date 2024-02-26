@@ -12,7 +12,8 @@ import WebKit
 class EventsListViewModel: ObservableObject {
     @Published var events: [EventModel] = []
     @Published var keyword: String = ""
-    
+    @Published var isEventListEmpty: Bool = false
+
     var currentPage: Int = -1
     var reachedLastPage: Bool = false
     var isFetchingNextPage: Bool = false
@@ -48,6 +49,7 @@ class EventsListViewModel: ObservableObject {
                 case .failure(let error):
                     print("Error loading events: \(error)")
                     self?.isFetchingNextPage = false
+                    self?.isEventListEmpty = true
                 }
             }, receiveValue: { [weak self] networkEmbedded in
                 let newEvents = networkEmbedded.embedded.events
@@ -87,7 +89,7 @@ class EventsListViewModel: ObservableObject {
         currentPage = -1
         DispatchQueue.main.async {
             self.events = []
-            
+            self.isEventListEmpty = false
         }
         reachedLastPage = false
         fetchData()
@@ -98,12 +100,15 @@ class EventsListViewModel: ObservableObject {
     }
 }
 
+//MARK: - WebView
 struct WebView: UIViewRepresentable {
     let url: URL
-    
+    @Binding var isWebViewLoading: Bool
+
     func makeUIView(context: Context) -> WKWebView  {
         let webView = WKWebView()
         webView.load(URLRequest(url: url))
+        webView.navigationDelegate = context.coordinator
         return webView
     }
     
@@ -112,4 +117,46 @@ struct WebView: UIViewRepresentable {
             uiView.load(URLRequest(url: url))
         }
     }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(parent: self)
+    }
+    
+    class Coordinator: NSObject, WKNavigationDelegate {
+        var parent: WebView
+        
+        init(parent: WebView) {
+            self.parent = parent
+        }
+        
+        func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+            parent.isWebViewLoading = true
+        }
+        
+        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+            parent.isWebViewLoading = false
+        }
+    }
 }
+
+// MARK: - NetworkMonitor
+class NetworkMonitor: ObservableObject {
+    private let monitor: NWPathMonitor
+    private let queue = DispatchQueue(label: "Monitor")
+    
+    @Published var isConnected: Bool
+    
+    init() {
+        self.monitor = NWPathMonitor()
+        self.isConnected = true
+        
+        self.monitor.pathUpdateHandler = { path in
+            DispatchQueue.main.async {
+                self.isConnected = path.status == .satisfied
+            }
+        }
+        
+        self.monitor.start(queue: self.queue)
+    }
+}
+
