@@ -6,30 +6,82 @@
 //
 
 import XCTest
+import Combine
+@testable import TicketmasterDiscovery
 
-final class TicketmasterDiscoveryTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class TicketmasterDiscoveryTests: XCTestCase {
+    var viewModel: EventsListViewModel!
+    var cancellables = Set<AnyCancellable>()
+    
+    override func setUp() {
+        super.setUp()
+        viewModel = EventsListViewModel()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override func tearDown() {
+        cancellables.removeAll()
+        viewModel = nil
+        super.tearDown()
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
+    
+    func testFetchData() {
+        let expectation = expectation(description: "Data fetched")
+        
+        viewModel.fetchData()
+        
+        let cancellable = viewModel.$events.sink { events in
+            if !events.isEmpty {
+                expectation.fulfill()
+            }
         }
+        
+        wait(for: [expectation], timeout: 5)
+        cancellable.cancel()
     }
-
+    
+    func testInitialDataLoad() {
+        let expectation = expectation(description: "Initial data loaded")
+        
+        Task {
+            await viewModel.initialDataLoad()
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 5)
+    }
+    
+    func testEventWithVenue() {
+        let eventWithVenue = EventModel(name: "The Taylor Party - Taylor Swift Night", id: "1", url: "https://ticketmaster.com", images: [], dates: EventDate(start: StartDate(localDate: "2024-01-07")), ageRestrictions: AgeRestrictions(legalAgeEnforced: true), embedded: EventEmbedded(venues: [Venue(name: "Theatre of Living Arts", city: VenueCity(name: "Philadelphia"), state: VenueState(stateCode: "PA"))]))
+        
+        XCTAssertNotNil(viewModel.eventViewModel(for: eventWithVenue))
+    }
+    
+    func testEventWithoutVenue() {
+        let eventWithoutVenue = EventModel(name: "Test Event Without Venue", id: "2", url: "https://example.com", images: [], dates: EventDate(start: StartDate(localDate: "2024-02-26")), ageRestrictions: nil, embedded: EventEmbedded(venues: []))
+        
+        XCTAssertNil(viewModel.eventViewModel(for: eventWithoutVenue))
+    }
+    
+    func testLoadNextPageIfNeeded() {
+        let event1 = EventModel(name: "Page 1", id: "1", url: "https://example.com", images: [], dates: EventDate(start: StartDate(localDate: "2024-02-26")), ageRestrictions: nil, embedded: EventEmbedded(venues: []))
+        let event2 = EventModel(name: "Page 2", id: "2", url: "https://example.com", images: [], dates: EventDate(start: StartDate(localDate: "2024-02-26")), ageRestrictions: nil, embedded: EventEmbedded(venues: []))
+        
+        viewModel.events = [event1]
+        
+        viewModel.loadNextPageIfNeeded(event: event2)
+        
+        XCTAssertTrue(viewModel.isFetchingNextPage)
+    }
+    
+    func testRunSearch() async {
+        let expectation = XCTestExpectation(description: "Run Search")
+        
+        let keyword = "test"
+        await viewModel.runSearch(keyword: keyword)
+        
+        await fulfillment(of: [expectation], timeout: 5)
+        
+        XCTAssertEqual(self.viewModel.keyword, keyword)
+        XCTAssertTrue(self.viewModel.events.isEmpty)
+    }
 }

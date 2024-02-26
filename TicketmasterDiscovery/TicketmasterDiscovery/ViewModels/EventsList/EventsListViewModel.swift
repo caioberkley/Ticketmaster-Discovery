@@ -13,10 +13,10 @@ class EventsListViewModel: ObservableObject {
     @Published var events: [EventModel] = []
     @Published var keyword: String = ""
     
-    private var currentPage: Int = -1
-    private var reachedLastPage: Bool = false
-    private var isFetchingNextPage: Bool = false
-    private var cancellables = Set<AnyCancellable>()
+    var currentPage: Int = -1
+    var reachedLastPage: Bool = false
+    var isFetchingNextPage: Bool = false
+    var cancellables = Set<AnyCancellable>()
     
     private let service = NetworkService()
     
