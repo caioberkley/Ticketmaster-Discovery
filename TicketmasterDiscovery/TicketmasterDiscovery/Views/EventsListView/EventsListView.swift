@@ -43,7 +43,6 @@ struct EventsListView: View {
                         }
                     }
                     .padding(.top, 20)
-                    .preferredColorScheme(.light)
                     .refreshable {
                         isLoading = true
                         Task {
