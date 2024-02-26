@@ -12,9 +12,9 @@ class NetworkService {
     private let baseURL = "https://app.ticketmaster.com/discovery/v2/"
     private let apiKey = "DW0E98NrxUIfDDtNN7ijruVSm60ryFLX"
     
-    func loadEvents(pageNumber: Int, pageSize: Int, keyword: String) -> AnyPublisher<[NetworkResponse], Error> {
-        let route = "events.json?countryCode=US&page=\(pageNumber)&size=\(pageSize)&keyword\(keyword)&apikey=\(apiKey)"
-        return request(route: route, responseType: [NetworkResponse].self)
+    func loadEvents(pageNumber: Int, keyword: String) -> AnyPublisher<Network, Error> {
+        let route = "events.json?countryCode=US&page=\(pageNumber)&size=20&keyword=\(keyword)&apikey=\(apiKey)"
+        return request(route: route, responseType: Network.self)
     }
     
     private func request<T: Decodable>(route: String, responseType: T.Type) -> AnyPublisher<T, Error> {

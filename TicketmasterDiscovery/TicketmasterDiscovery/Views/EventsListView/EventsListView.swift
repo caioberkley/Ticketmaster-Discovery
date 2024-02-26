@@ -6,84 +6,83 @@
 //
 
 import SwiftUI
-import WebKit
 
 struct EventsListView: View {
-    @EnvironmentObject private var launchScreenState: LaunchScreenStateManager
-    @StateObject private var viewModel = EventsListViewModel()
-    @State private var isLoading = false
-    
-    var body: some View {
-        NavigationStack {
-            ZStack {
-                Color.blue.ignoresSafeArea()
-                List(viewModel.events, id: \.id) { event in
-                    NavigationLink(
-                        destination: WebView(url: (URL(string: event.url) ?? URL(string: "https://www.ticketmaster.com"))!)
-                    ) {
-                        EventCardView(event: event)
-                    }
-                    .listRowSeparator(.hidden)
-                    .listRowInsets(EdgeInsets(top: 0, leading: 24, bottom: 24, trailing: 6))
-                    .listRowBackground(Color.black.ignoresSafeArea())
-                    .onAppear {
-                        viewModel.loadNextPageIfNeeded(event: event)
-                    }
-                }
-                .padding(.top, 20)
-                .preferredColorScheme(.dark)
-                .refreshable {
-                    isLoading = true
-                    Task {
-                        await viewModel.refreshData()
-                        DispatchQueue.main.async {
-                            isLoading = false
-                        }
-                    }
-                }
-                .listStyle(.plain)
-                .background(Color.white.ignoresSafeArea())
-                
-                if isLoading {
-                    ProgressView()
-                }
+  @EnvironmentObject private var launchScreenState: LaunchScreenStateManager
+  @StateObject private var viewModel = EventsListViewModel()
+  @Environment(\.colorScheme) var colorScheme
+  @State private var searchKeyword = ""
+  @State private var isLoading = false
+   
+  var body: some View {
+    NavigationStack {
+      ZStack {
+        List(viewModel.events, id: \.id) { event in
+          let eventViewModel = viewModel.eventViewModel(for: event)
+          NavigationLink(
+            destination: WebView(url: (URL(string: event.url) ?? URL(string: "https://www.ticketmaster.com"))!)
+          ) {
+            if let eventViewModel = eventViewModel {
+              EventCardView(viewModel: eventViewModel)
             }
-            .navigationBarTitle("Events", displayMode: .large)
+          }
+          .listRowSeparator(.hidden)
+          .listRowInsets(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 6))
+          .listRowBackground(Color.clear.ignoresSafeArea())
+          .onAppear {
+            viewModel.loadNextPageIfNeeded(event: event)
+          }
         }
-        .task {
-            isLoading = true
-            Task {
-                await viewModel.initialDataLoad()
-                do {
-                    try await Task.sleep(for: .seconds(2))
-                } catch {
-                    print("Error: \(error)")
-                }
-                DispatchQueue.main.async {
-                    self.launchScreenState.dismiss()
-                    isLoading = false
-                }
+        .searchable(text: $searchKeyword, prompt: "Discovery events!")
+        .onSubmit(of: .search) {
+          Task {
+            await viewModel.runSearch(keyword: searchKeyword)
+          }
+        }
+        .padding(.top, 20)
+        .preferredColorScheme(.light)
+        .refreshable {
+          isLoading = true
+          Task {
+            await viewModel.refreshDataAsync()
+            DispatchQueue.main.async {
+              isLoading = false
             }
+          }
         }
-        .onDisappear {
-            viewModel.cancel()
+        .listStyle(.plain)
+        .background(colorScheme == .light ? Color.white.ignoresSafeArea() : Color.black.ignoresSafeArea())
+        if isLoading {
+          ProgressView()
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+      }
+      .navigationBarTitle("Ticketmaster")
+        .onAppear {
+          UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.tintColor]
+        }
     }
+    .task {
+      isLoading = true
+      Task {
+        await viewModel.initialDataLoad()
+        DispatchQueue.main.async {
+          self.launchScreenState.dismiss()
+          isLoading = false
+        }
+      }
+    }
+    .onDisappear {
+      viewModel.cancel()
+    }
+    .navigationViewStyle(StackNavigationViewStyle())
+  }
 }
 
-struct WebView: UIViewRepresentable {
-    let url: URL
-
-    func makeUIView(context: Context) -> WKWebView  {
-        let webView = WKWebView()
-        webView.load(URLRequest(url: url))
-        return webView
-    }
-
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-        if uiView.url == nil {
-            uiView.load(URLRequest(url: url))
-        }
-    }
+struct EventsListView_Previews: PreviewProvider {
+  static var previews: some View {
+    let viewModel = EventsListViewModel()
+    return EventsListView()
+      .environmentObject(LaunchScreenStateManager())
+      .environmentObject(viewModel)
+  }
 }

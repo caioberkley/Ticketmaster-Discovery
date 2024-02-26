@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LaunchScreenView: View {
     @EnvironmentObject private var launchScreenState: LaunchScreenStateManager
+    @Environment(\.colorScheme) var colorScheme
     
     @State private var firstAnimation = false
     @State private var secondAnimation = false
@@ -32,7 +33,7 @@ struct LaunchScreenView: View {
     
     var body: some View {
         ZStack {
-            Color.white.ignoresSafeArea()
+            (colorScheme == .light ? Color.white.ignoresSafeArea() : Color.black.ignoresSafeArea())
             image
         }.onReceive(animationTimer) { timerValue in
             updateAnimation()
@@ -56,5 +57,12 @@ struct LaunchScreenView: View {
         case .finished:
             break
         }
+    }
+}
+
+struct LaunchScreenView_Previews: PreviewProvider {
+    static var previews: some View {
+        LaunchScreenView()
+            .environmentObject(LaunchScreenStateManager())
     }
 }

@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C2358BFF2B89619B00DC8F31 /* TicketmasterDiscoveryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358BFE2B89619B00DC8F31 /* TicketmasterDiscoveryApp.swift */; };
-		C2358C012B89619B00DC8F31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C002B89619B00DC8F31 /* ContentView.swift */; };
-		C2358C032B89619B00DC8F31 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C022B89619B00DC8F31 /* Item.swift */; };
 		C2358C052B89619D00DC8F31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2358C042B89619D00DC8F31 /* Assets.xcassets */; };
 		C2358C092B89619D00DC8F31 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2358C082B89619D00DC8F31 /* Preview Assets.xcassets */; };
 		C2358C132B89619D00DC8F31 /* TicketmasterDiscoveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C122B89619D00DC8F31 /* TicketmasterDiscoveryTests.swift */; };
@@ -23,6 +21,7 @@
 		C2358C3E2B89DA6500DC8F31 /* LaunchScreenStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C3D2B89DA6500DC8F31 /* LaunchScreenStateManager.swift */; };
 		C2358C412B89FC8200DC8F31 /* EventsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C402B89FC8200DC8F31 /* EventsListViewModel.swift */; };
 		C2358C442B8A023700DC8F31 /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2358C432B8A023700DC8F31 /* EventCardView.swift */; };
+		C2CF6C902B8AEF6E0023A684 /* EventCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CF6C8F2B8AEF6E0023A684 /* EventCardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +44,6 @@
 /* Begin PBXFileReference section */
 		C2358BFB2B89619B00DC8F31 /* TicketmasterDiscovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicketmasterDiscovery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2358BFE2B89619B00DC8F31 /* TicketmasterDiscoveryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketmasterDiscoveryApp.swift; sourceTree = "<group>"; };
-		C2358C002B89619B00DC8F31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		C2358C022B89619B00DC8F31 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		C2358C042B89619D00DC8F31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2358C062B89619D00DC8F31 /* TicketmasterDiscovery.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TicketmasterDiscovery.entitlements; sourceTree = "<group>"; };
 		C2358C082B89619D00DC8F31 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -63,6 +60,7 @@
 		C2358C3D2B89DA6500DC8F31 /* LaunchScreenStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenStateManager.swift; sourceTree = "<group>"; };
 		C2358C402B89FC8200DC8F31 /* EventsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListViewModel.swift; sourceTree = "<group>"; };
 		C2358C432B8A023700DC8F31 /* EventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
+		C2CF6C8F2B8AEF6E0023A684 /* EventCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,12 +116,7 @@
 				C2358C2D2B89D83E00DC8F31 /* ViewModels */,
 				C2358C2C2B89D81C00DC8F31 /* Services */,
 				C2358C2B2B89D81100DC8F31 /* Errors */,
-				C2358BFE2B89619B00DC8F31 /* TicketmasterDiscoveryApp.swift */,
-				C2358C002B89619B00DC8F31 /* ContentView.swift */,
-				C2358C022B89619B00DC8F31 /* Item.swift */,
-				C2358C042B89619D00DC8F31 /* Assets.xcassets */,
-				C2358C062B89619D00DC8F31 /* TicketmasterDiscovery.entitlements */,
-				C2358C072B89619D00DC8F31 /* Preview Content */,
+				C2358C452B8A2A1800DC8F31 /* Misc */,
 			);
 			path = TicketmasterDiscovery;
 			sourceTree = "<group>";
@@ -172,6 +165,7 @@
 		C2358C2D2B89D83E00DC8F31 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				C2CF6C8E2B8AEF260023A684 /* EventCard */,
 				C2358C3F2B89DD0A00DC8F31 /* EventsList */,
 				C2358C3C2B89DA1900DC8F31 /* LaunchScreen */,
 			);
@@ -234,6 +228,25 @@
 				C2358C432B8A023700DC8F31 /* EventCardView.swift */,
 			);
 			path = EventCardView;
+			sourceTree = "<group>";
+		};
+		C2358C452B8A2A1800DC8F31 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				C2358BFE2B89619B00DC8F31 /* TicketmasterDiscoveryApp.swift */,
+				C2358C042B89619D00DC8F31 /* Assets.xcassets */,
+				C2358C062B89619D00DC8F31 /* TicketmasterDiscovery.entitlements */,
+				C2358C072B89619D00DC8F31 /* Preview Content */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		C2CF6C8E2B8AEF260023A684 /* EventCard */ = {
+			isa = PBXGroup;
+			children = (
+				C2CF6C8F2B8AEF6E0023A684 /* EventCardViewModel.swift */,
+			);
+			path = EventCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,11 +379,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2358C012B89619B00DC8F31 /* ContentView.swift in Sources */,
 				C2358C3B2B89D9F500DC8F31 /* NetworkResponse.swift in Sources */,
 				C2358C372B89D9B400DC8F31 /* LaunchScreenView.swift in Sources */,
+				C2CF6C902B8AEF6E0023A684 /* EventCardViewModel.swift in Sources */,
 				C2358C332B89D94500DC8F31 /* NetworkError.swift in Sources */,
-				C2358C032B89619B00DC8F31 /* Item.swift in Sources */,
 				C2358C3E2B89DA6500DC8F31 /* LaunchScreenStateManager.swift in Sources */,
 				C2358C442B8A023700DC8F31 /* EventCardView.swift in Sources */,
 				C2358BFF2B89619B00DC8F31 /* TicketmasterDiscoveryApp.swift in Sources */,
@@ -465,7 +477,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -520,7 +534,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -532,10 +548,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = TicketmasterDiscovery/TicketmasterDiscovery.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TicketmasterDiscovery/Misc/TicketmasterDiscovery.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TicketmasterDiscovery/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TicketmasterDiscovery/Misc/Preview Content\"";
 				DEVELOPMENT_TEAM = 3LNUZ8SFQF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -547,6 +563,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -571,10 +588,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = TicketmasterDiscovery/TicketmasterDiscovery.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TicketmasterDiscovery/Misc/TicketmasterDiscovery.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TicketmasterDiscovery/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TicketmasterDiscovery/Misc/Preview Content\"";
 				DEVELOPMENT_TEAM = 3LNUZ8SFQF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -586,6 +603,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

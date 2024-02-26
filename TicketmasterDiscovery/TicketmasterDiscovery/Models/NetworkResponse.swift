@@ -9,7 +9,15 @@ import Foundation
 import SwiftData
 
 // MARK: - Network Response Model
-struct NetworkResponse: Codable {
+struct Network: Codable {
+    let embedded: NetworkEmbedded
+
+    enum CodingKeys: String, CodingKey {
+        case embedded = "_embedded"
+    }
+}
+
+struct NetworkEmbedded: Codable {
     let events: [EventModel]
 }
 
